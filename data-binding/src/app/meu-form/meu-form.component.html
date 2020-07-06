@@ -1,0 +1,42 @@
+<section class="two-way-binding">
+
+    <article>
+        <h3>
+            Two-way data binding
+        </h3>
+        <div>
+            <input type="text" 
+            [value]='nomeA' 
+            (input)=  "nomeA = $event.target.value"
+            />
+            <p>Voce digitou {{ nomeA }} </p>
+
+            <p>Ex 1 </p> <br>
+
+                <!-- ou -->
+            <input type="text" 
+            [ngModel]='nomeB' 
+            (ngModelChange)=  "nomeB = $event"
+            />
+            <p>Voce digitou {{ nomeB }} </p>
+
+            <p>Ex 2 </p> <br>
+
+            <input type="text"
+            [(ngModel)] = "nomeC"
+            />
+
+            <p>Voce digitou {{ nomeC }} </p>
+            <br>
+            <br><br><br><br><br><br><b></b>
+        </div>
+        <div>
+            <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos </p>
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
+
+
+        </div>
+    </article>
+
+</section>

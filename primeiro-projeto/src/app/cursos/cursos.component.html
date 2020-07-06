@@ -1,0 +1,11 @@
+<p>=============</p>
+<p>Lista de curso do portal {{ nomePortal }} </p>
+<app-curso-detalhe></app-curso-detalhe>
+<ul>
+    <!-- *ngfor é uma diretiva  -->
+    <li *ngFor="let curso of cursos">
+        {{curso}}
+    </li>
+
+
+</ul>

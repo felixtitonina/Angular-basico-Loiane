@@ -1,0 +1,80 @@
+<section class="property-binding">
+    <article>
+        <h3>Interpolation / Interpolação</h3>
+        <p>Porta de treinamento Loiane: {{ url }}</p>
+        <p>Resultado de 1 + 1 é: {{ 1 + 1}}</p>
+        <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>
+        <p>Curso de Angular e bom : {{ cursoAngular && getCustircurso() }} </p>
+    </article>
+
+    <article>
+        <h3>Property / Binding</h3>
+        <img src="{{urlImagem}}">
+        <!--Interpolação chaves duplas-->
+        <img [src]="urlImagem"> <!-- property-binding  usa conchetes-->
+    </article>
+
+    <article>
+        <h3>Class e Style Binding</h3>
+        <p>Testar mais tarde</p>
+    </article>
+</section>
+
+<section class="event-binding">
+    <article>
+        <h3> Event binding</h3>
+        <div>
+            <button (click)="botaoClicado()" class="btn btn-primary">Me clique</button>
+            <br> <br>
+            <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)"
+                (blur)="salvarValor(campoInput.value)" #campoInput />
+            <p>Valor atual: {{valorAtual}}</p>
+            <p>Valor salvo: {{valorSalvo}}</p>
+            <br>
+            <br>
+            <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">
+                <p>Passe o mouse sibre mim</p>
+            </span>
+        </div>
+    </article>
+</section>
+
+<section>
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <input type="text" [value]="nome" (input)="nome = $event.target.value" />
+
+            <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+
+            <input type="text" [(ngModel)]="nome">
+
+            <p>Você digitou: {{ nome }}</p>
+        </div>
+    </article>
+</section>
+
+<app-meu-form></app-meu-form>
+
+<br>
+<br>
+<br>
+<section>
+    <article>
+        <h3>
+            Input / output Properties </h3>
+
+        <app-curso [nome]="nomeDoCurso"></app-curso>
+
+        <contador valor="10"></contador>
+        <contador [valor]></contador>
+        <contador 
+            [valor]="valorInicial" 
+            (mudouValor)="onMudouValor($event)"></contador>
+
+    </article>
+</section>
+
+<br>
+<br>
+<br>

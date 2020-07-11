@@ -1,0 +1,32 @@
+<!-- <nav class="navbar navbar-inverse bg-inverse">
+
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link">Home</a>
+    <a class="nav-item nav-link">Features</a>
+    <a class="nav-item nav-link">Pricing</a>
+  </div>
+
+
+</nav>
+ -->
+
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="aba == 'home'" (click)="aba = 'home'">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="aba == 'mapa'" (click)="aba = 'mapa'">Mapa</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="aba == 'lista'" (click)="aba = 'lista'">Lista</a>
+    </li>
+
+  </ul>
+</nav>
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'">Modo mapa ativado</p>
+  <p *ngSwitchCase="'lista'">Modo lista ativado</p>
+  <p *ngSwitchDefault>Home</p>
+</div>

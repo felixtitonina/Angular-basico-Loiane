@@ -1,0 +1,45 @@
+<h5>@ngif</h5>
+<!-- Recomendado para arvores de elemento grandes -->
+<div *ngIf="cursos.length > 0">
+    Lista de cursos 
+</div>
+
+<div *ngIf="cursos.length == 0">
+    Não exite cursos para serem listados.
+</div>
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos 
+</div>
+
+<div *ngIf="!mostrarCursos">
+    Não exite cursos para serem listados.
+</div>
+<br>
+<button (click)="onMostrarCursos()" >Mostrar ou esconder cursos</button>
+<!-- Evitar fazer esse if else com ngif pq alterar diretamente a DOM e isso é custoso  -->
+<br>
+<h5>hidden com alternativa </h5>
+<!-- recomendado para arvore de elementos pequenas  -->
+<div [hidden]="!mostrarCursos">
+    <!-- se hidden for false nao monstra  -->
+    Lista de cursos 
+</div>
+
+<div [hidden]="mostrarCursos"> 
+    <!-- se hidden for true monstra  -->
+    Não exite cursos para serem listados.
+</div>
+
+
+<h5>Removendo o * e usando template</h5>
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos aqui 1 
+</div>
+<!-- <template [ngIf]="mostrarCursos" >
+    <div>Lista de cursos aqui 2</div>
+</template> -->
+<!-- <div template="ngIf mostrarCursos" >
+    Lista de cursos aqui 3
+</div> -->

@@ -1,1 +1,21 @@
-<p>exemplo-ng-content works!</p>
+<!-- exemplo 1 ng-content -->
+
+<!-- <div class="panel panel-default">
+    <div class="panel-heading">
+        <ng-content></ng-content>
+    </div>
+    <div class="panel-body">
+        <ng-content></ng-content>
+    </div>
+</div> -->
+
+<!-- exemplo 2 ng-content -->
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <ng-content select=".titulo"></ng-content>
+    </div>
+    <div class="panel-body">
+        <ng-content select=".corpo"></ng-content>
+    </div>
+</div>

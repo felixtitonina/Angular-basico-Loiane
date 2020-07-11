@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./diretiva-ngclass.component.css']
 })
 export class DiretivaNgclassComponent implements OnInit {
-
+  meuFavorito:boolean = false
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onClick(){
+    this.meuFavorito = !this.meuFavorito
   }
 
 }

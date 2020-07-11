@@ -1,0 +1,26 @@
+<h5>Style com property binding (style binding)</h5>
+
+<button
+[style.backgroundColor]="ativo ? 'blue': 'gray'"
+[style.color]="ativo ? 'while': 'black'"
+[style.fontweight]="ativo ? 'bold': 'normal'"
+[style.fontSize]="tamanhoFonte + 'px'"
+(click)="mudarAtivo()" 
+>
+    Mudar atributo 'ativo'
+</button>
+<br>
+<!-- <input type="text" [(ngModel)]="tamanhoFonte" > não funcionou no angular 9     -->
+
+<!-- Ou usando o ngStyle -->
+<button
+[ngStyle]="{
+    'backgroundColor':  ativo ? 'blue': 'gray',
+    'color': ativo ? 'while': 'black', 
+    'fontweight': ativo ? 'bold': 'normal',
+    'fontSize': tamanhoFonte + 'px'
+}"
+(click)="mudarAtivo()" 
+>
+    Mudar atributo 'ativo'
+</button>

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "servicos"
+    }
+  },
+  "defaultProject": "servicos",
+  "cli": {
+    "analytics": "6f503b8a-1ece-411e-ab93-97b1fc04b524"
+  }
 }

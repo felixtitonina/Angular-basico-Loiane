@@ -21,6 +21,14 @@ export class CursosComponent implements OnInit {
   ngOnInit(): void { // primeiro metodo executado executado quando a class for instaciado
     // this.cursos = this._cursosService.getCursos()  // exemplo 1 sem o private
     this.cursos = this.cursosService.getCursos() 
+    // this.cursosService.emitirCursoCriado.subscribe( // aqui nos registramos para poder receber notificação de usos da funcao emitirCursoCriado
+    //   curso => console.log(curso)
+    // )
+
+     CursosService.criouNovoCurso.subscribe( // a partir CursosService. temos acessoa ao metodos e propriedade static
+       curso => this.cursos.push(curso)
+     )
+
   }
 
 }

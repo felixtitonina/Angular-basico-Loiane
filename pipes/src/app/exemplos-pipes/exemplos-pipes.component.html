@@ -4,7 +4,29 @@
 <p>Estrelas: {{ livro.rating | number:'1.1-1'}} </p>
 <p>Páginas: {{ livro.nuemroPaginas | number}} </p>
 <p>Preço: {{ livro.preco | currency:'BRL' }} </p>
-<p>Data Lançamento: {{ livro.dataLancamento | date:'dd-MM-yyyy' }} </p>
+<p>Data Lançamento: {{ livro.dataLancamento | date }} </p>
 <p>Url: {{ livro.url}}: </p>
 <br>
 <p>Livro: {{ livro | json}}</p>
+
+<input type="text" [(ngModel)]="filtro" >
+<br>
+<input type="text" #novoValor>
+<button (click)="addCurso(novoValor.value)">Add Curso</button>
+<h5>pipe puro</h5>
+<ul>
+    <!-- nao deve se fazer este filtro  -->
+    <li *ngFor="let liv of livros | filtroArray:filtro " > {{ liv }}</li>
+</ul>
+
+<h5>pipe impuro</h5>
+<ul>
+    <!-- nao deve se fazer este filtro  -->
+    <li *ngFor="let liv of livros | filtroArrayImpuro:filtro " > {{ liv }}</li>
+</ul>
+
+<h5>pipe impuro</h5>
+<ul>
+    <!-- maneira correta de usar  filtro em projetos   -->
+    <li *ngFor="let liv of obterCursos()" > {{ liv }}</li>
+</ul>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+
 
 @Component({
   selector: 'app-exemplos-pipes',
@@ -15,28 +17,36 @@ export class ExemplosPipesComponent implements OnInit {
     url: 'https://www.amazon.com.br/'
   }
 
-livros: string[] = ['java', 'Angular 2']
+  livros: string[] = ['java', 'Angular 2']
 
-filtro: string
+  filtro: string
 
-addCurso(valor){
-  this.livros.push(valor)
-}
-
-obterCursos(){
-  if (this.livros.length === 0 || this.filtro === undefined  || this.filtro.trim() === '' ) {
-    return this.livros
+  addCurso(valor) {
+    this.livros.push(valor)
   }
-  return this.livros.filter((v)=>{
-    if (v=> v.toLowerCase().indexOf(this.filtro.toLowerCase()) >=0) {
-      return true
+
+  obterCursos() {
+    if (this.livros.length === 0 || this.filtro === undefined || this.filtro.trim() === '') {
+      return this.livros
     }
-    return false
+    return this.livros.filter((v) => {
+      if (v => v.toLowerCase().indexOf(this.filtro.toLowerCase()) >= 0) {
+        return true
+      }
+      return false
+    }
+
+    )
   }
-    
-  )
-}
-  constructor() { }
+
+  valorAsync = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Valor assincrono'), 5000)
+  })
+
+
+  // secondsCounter.subscribe(n =>
+  //   console.log(`It's been ${n} seconds since subscribing!`));
+  
 
   ngOnInit(): void {
   }

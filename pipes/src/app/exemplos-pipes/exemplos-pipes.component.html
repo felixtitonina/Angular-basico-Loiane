@@ -9,24 +9,32 @@
 <br>
 <p>Livro: {{ livro | json}}</p>
 
-<input type="text" [(ngModel)]="filtro" >
+<input type="text" [(ngModel)]="filtro">
 <br>
 <input type="text" #novoValor>
 <button (click)="addCurso(novoValor.value)">Add Curso</button>
 <h5>pipe puro</h5>
 <ul>
     <!-- nao deve se fazer este filtro  -->
-    <li *ngFor="let liv of livros | filtroArray:filtro " > {{ liv }}</li>
+    <li *ngFor="let liv of livros | filtroArray:filtro "> {{ liv }}</li>
 </ul>
 
 <h5>pipe impuro</h5>
 <ul>
     <!-- nao deve se fazer este filtro  -->
-    <li *ngFor="let liv of livros | filtroArrayImpuro:filtro " > {{ liv }}</li>
+    <li *ngFor="let liv of livros | filtroArrayImpuro:filtro "> {{ liv }}</li>
 </ul>
 
 <h5>pipe impuro</h5>
 <ul>
     <!-- maneira correta de usar  filtro em projetos   -->
-    <li *ngFor="let liv of obterCursos()" > {{ liv }}</li>
+    <li *ngFor="let liv of obterCursos()"> {{ liv }}</li>
 </ul>
+
+<br>
+<P> {{valorAsync | async }} </P>
+
+<br>
+<br>
+<!-- <P> {{ valorAsync2 | async }} </P> -->
+

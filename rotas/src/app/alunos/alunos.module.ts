@@ -21,7 +21,8 @@ import { AlunosService } from './alunos.service';
         AlunoDetalheComponent
     ],
     providers: [
-        AlunosService
+        AlunosService,
+        
     ]
 })
 export class AlunosModule { }

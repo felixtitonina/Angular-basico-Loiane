@@ -9,12 +9,21 @@ import { LoginComponent } from './login/login.component';
 
 
 const AppRoutes: Routes = [
-  
+  {
+    path: 'cursos',
+
+    loadChildren: () => import('./cursos/cursos.module').then(mod => mod.CursosModule),
+  },
+  {
+    path: 'alunos',
+
+    loadChildren: () => import('./alunos/alunos.module').then(mod => mod.AlunosModule),
+  },
   // { path:'cursos', component: CursosComponent},
   // { path:'curso/:id', component: CursoDetalheComponent},
-  { path:'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent },
   // { path:'naoEncontrado', component: CursoNaoEncontradoComponent},
-  { path:'', component: HomeComponent}
+  { path: '', component: HomeComponent }
 ];
 
 @NgModule({

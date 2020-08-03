@@ -6,19 +6,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataFormComponent } from './data-form/data-form.component';
-import { TemplateFormComponent } from './template-form/template-form.component';
+// import { TemplateFormComponent } from './template-form/template-form.component';
+import { TemplateFormModule } from './template-form/template-form.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataFormComponent,
-    TemplateFormComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TemplateFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
